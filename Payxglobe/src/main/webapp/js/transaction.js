@@ -36,7 +36,7 @@ function createDom(data) {
     	htmlContent = htmlContent + '<ul STYLE="text-align: left;"><li style="border-top:none;">Account No : '+data.payeeList[i].acc+'</li><li>Bank : '+data.payeeList[i].bank+'</li><li>Bank Code : '+data.payeeList[i].bic+'</li><li>Mobile : '+data.payeeList[i].mob+'</li><li style="border-botom:none;">Address : '+data.payeeList[i].address+'</li></ul>';
     	htmlContent = htmlContent + '</div>';
     	htmlContent = htmlContent + '</td>';
-    	htmlContent = htmlContent + '<td style="width:100px;">Currency : <span id="brokerRate">'+data.payeeList[i].curr+'</span></td>';
+    	htmlContent = htmlContent + '<td style="width:100px;">Currency : <span id="brokerRate">'+getCurrencySign(data.payeeList[i].curr)+' '+data.payeeList[i].curr+'</span></td>';
     	htmlContent = htmlContent + '<td style="width:100px;"><span id="savingsWithUs"><input type="text" class="epam-textbox" id="payee-amount-'+payeeNumber+'" placeholder="Enter Amount" /></span></td>';
     	htmlContent = htmlContent + '<td style="width:100px;">';
     	htmlContent = htmlContent + '<select class="epam-select" id="payee-amount-curr-select-'+payeeNumber+'" onchange="payeeCurrSelect('+payeeNumber+')">';
@@ -100,7 +100,7 @@ function getRates(payeeAmount, payeeCurrency) {
 		var rate = currRateArr[1]
 		
 		if(currFrom == payeeCurrency){
-			transferRate = "Transferring " + payeeAmount*rate + " " + currTo + " (Rate: "+ rate +")";
+			transferRate = "Transferring " + payeeAmount*rate + " " + getCurrencySign(currTo) + " " + currTo + " (Rate: "+ rate +")";
 		}
 	}
 	return transferRate;
@@ -119,5 +119,16 @@ function setRates(dataSpotRates) {
 		currencyValueArraySet = currencySet + "," + valueSet;
 		
 		spotRatesArr[i] = currencyValueArraySet;
+	}
+}
+
+function getCurrencySign(currSign) {
+	var currencySign = "";
+	var RBMSign = '&#165 ';
+	var USDSign = '&#36 ';
+	if(currSign == "CNY") {
+		return RBMSign;
+	} else {
+	    return USDSign;	
 	}
 }
