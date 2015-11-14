@@ -1,21 +1,23 @@
 package com.payxglobe.dto;
 
+import com.payxglobe.enums.CurrencyEnum;
+
 public class FXRateDto {
 
-	private String from;
-	private String to;
+	private CurrencyEnum from;
+	private CurrencyEnum to;
 	private String amt;
 	
-	public String getFrom() {
+	public CurrencyEnum getFrom() {
 		return from;
 	}
-	public void setFrom(String from) {
+	public void setFrom(CurrencyEnum from) {
 		this.from = from;
 	}
-	public String getTo() {
+	public CurrencyEnum getTo() {
 		return to;
 	}
-	public void setTo(String to) {
+	public void setTo(CurrencyEnum to) {
 		this.to = to;
 	}
 	public String getAmt() {
@@ -24,6 +26,7 @@ public class FXRateDto {
 	public void setAmt(String amt) {
 		this.amt = amt;
 	}
+	
 
 
 	

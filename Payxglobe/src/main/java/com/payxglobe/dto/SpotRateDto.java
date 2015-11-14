@@ -3,13 +3,13 @@ package com.payxglobe.dto;
 public class SpotRateDto {
 
 	private String pair;
-	private Double rate;
+	private String rate;
 	
 	public SpotRateDto() {
 		
 	}
 	
-	public SpotRateDto(String pair, Double rate) {
+	public SpotRateDto(String pair, String rate) {
 		this.pair = pair;
 		this.rate = rate;
 	}
@@ -19,10 +19,10 @@ public class SpotRateDto {
 	public void setPair(String pair) {
 		this.pair = pair;
 	}
-	public Double getRate() {
+	public String getRate() {
 		return rate;
 	}
-	public void setRate(Double rate) {
+	public void setRate(String rate) {
 		this.rate = rate;
 	}
 	

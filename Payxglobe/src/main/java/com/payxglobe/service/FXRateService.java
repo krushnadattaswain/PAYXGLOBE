@@ -5,5 +5,6 @@ import com.payxglobe.dto.FXRateResultDto;
 
 public interface FXRateService {
 
-	public FXRateResultDto getFxRate(FXRateDto fxRateDto);
+	public FXRateResultDto getFxRateWithBrokerComparison(FXRateDto fxRateDto);
+	public Double getFxRate(FXRateDto fxRateDto);
 }
