@@ -56,6 +56,7 @@ function createDom(data) {
 	//alert("here 1 " + htmlContent);
     $("#payee-list-ul").html("");
     $("#payee-list-ul").html(htmlContent);
+    $("#loadingDiv").hide();
 }  
 
 function showPayeeDetails(payeeNumber) {
