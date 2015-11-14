@@ -52,7 +52,7 @@
 	
 	.homepage #content header h2
 	{
-		padding: 0.70em 0em;
+		padding: 0.20em 0em;
 		font-size: 2.2em;
 	}
 
@@ -115,22 +115,22 @@
 	
 /* -- epam style --*/
 .text-label-class-gray-small {
-	font-size: 18px;
+	font-size: 16px;
 	color: #777;
 }
 
 .text-label-class-gray-big {
-	font-size: 20px;
+	font-size: 18px;
 	color: #777;
 }
 
 .text-label-class-green {
-	font-size: 20px;
+	font-size: 18px;
 	color: #088A29;
 }
 
 .text-label-class-blue {
-	font-size: 20px;
+	font-size: 18px;
 	color: #2E9AFE;
 }
 

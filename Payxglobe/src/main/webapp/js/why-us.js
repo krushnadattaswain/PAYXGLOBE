@@ -12,35 +12,36 @@ function fetchData(fromCurr, toCurr, userAmmount) {
 	  contentType: "application/json",
 	  success: function(data) { 
 		  //alert("In "+data.ourRate);
+		  //alert(JSON.stringify(data.fxBrokerrates[0]));
 		  createDom(data);	  
 	  }
   });   
 }
 
 function createDom(data) {
-	alert(JSON.stringify(data.fxBrokerrates));
-    
-    $("#currencyResult").show();
+	var ourRate = data.ourRate; 
+	var htmlContent = "";
+	
+	$("#currencyResult").show();
     $("#ourRate").html("");
     $("#ourRate").html(ourRate);
     
-    for(var i=data.fxBrokerrates.length; i > 0; i--) {
+    for(var i=0; i < data.fxBrokerrates.length; i++) {
     	htmlContent = htmlContent + '';
     	htmlContent = htmlContent + '<li>';
     	htmlContent = htmlContent + '<table style="border:0px solid red; margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; width: 600px;">';
     	htmlContent = htmlContent + '<tr>';
-    	htmlContent = htmlContent + '<td style="width:200px;">Broker Name : <span id="brokerName">Western Union</span></td>';
-    	htmlContent = htmlContent + '<td style="width:200px;">Broker Rate : <span id="brokerRate">6.2</span></td>';
-    	htmlContent = htmlContent + '<td style="width:200px;">Savings With Us <span id="savingsWithUs">0.2</span></td>';
+    	htmlContent = htmlContent + '<td style="width:200px;">Broker Name : <span id="brokerName">'+data.fxBrokerrates[i].name+'</span></td>';
+    	htmlContent = htmlContent + '<td style="width:200px;">Broker Rate : <span id="brokerRate">'+data.fxBrokerrates[i].rate+'</span></td>';
+    	htmlContent = htmlContent + '<td style="width:200px;">Savings With Us : <span id="savingsWithUs">'+data.fxBrokerrates[i].difference+'</span></td>';
     	htmlContent = htmlContent + '</tr>';
     	htmlContent = htmlContent + '</table>';
     	htmlContent = htmlContent + '</li>';
     }
     
-    alert("here 1 " + htmlContent);
+    //alert("here 1 " + htmlContent);
     $("#brokerInfo").html("");
-    $("#brokerInfo").html(htmlContent);
-    
+    $("#brokerInfo").html(htmlContent); 
 }
 
 function currencyChange() {
@@ -53,7 +54,7 @@ function currencyChange() {
 	userAmmount = $("#userAmmount").val();
 	
 	if(userAmmount == "" || userAmmount == "undefine") {
-		userAmmount = null;
+		userAmmount = 1;
 	}
 	
 	//alert(sourceSelect + " " + destinationSelect + " " + userAmmount);
