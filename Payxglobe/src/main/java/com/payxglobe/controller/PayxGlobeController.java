@@ -17,13 +17,16 @@ import com.payxglobe.constants.Constant;
 import com.payxglobe.dto.FXRateDto;
 import com.payxglobe.dto.FXRateResultDto;
 import com.payxglobe.dto.PayeeDto;
+import com.payxglobe.dto.PaymentDto;
 import com.payxglobe.dto.RippleBalanceDto;
 import com.payxglobe.dto.SpotRateDto;
 import com.payxglobe.dto.SpotRatesDto;
+import com.payxglobe.dto.TxnStatusDto;
 import com.payxglobe.dto.UserViewDto;
 import com.payxglobe.enums.CurrencyEnum;
 import com.payxglobe.service.FXRateService;
 import com.payxglobe.service.PayeeService;
+import com.payxglobe.service.PaymentService;
 import com.payxglobe.service.RippleService;
 import com.payxglobe.util.NumberUtil;
 
@@ -41,10 +44,18 @@ public class PayxGlobeController {
 	
 	@Autowired
 	private PayeeService payeeService;
+	
+	@Autowired
+	PaymentService paymentService;
 
 	@RequestMapping(value = "/getFXRate", method = RequestMethod.POST)
 	private FXRateResultDto getFXRate(@RequestBody FXRateDto fxRateDto, @RequestParam String ts) {
 		return fxRateService.getFxRateWithBrokerComparison(fxRateDto);
+	}
+	
+	@RequestMapping(value = "/pay", method = RequestMethod.POST)
+	private TxnStatusDto pay(@RequestBody PaymentDto paymentDto, @RequestParam String ts) {
+		return paymentService.pay(paymentDto);
 	}
 	
 	@RequestMapping(value = "/getPayeeList", method = RequestMethod.GET)

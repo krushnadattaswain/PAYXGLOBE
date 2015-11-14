@@ -19,13 +19,8 @@ import com.payxglobe.enums.CurrencyEnum;
 
 @Component
 public class RippleBalanceCacheForNonXRP {
-
-
 	
 	private Map<String, List<RippleNonXRPBalance>> cache = new HashMap<String, List<RippleNonXRPBalance>>();
-	
-	private static final String USD_ACC_KEY = USD+PAYXGLOBE_USD_RIPPLE_ACC;
-	private static final String CNY_ACC_KEY = CNY+PAYXGLOBE_CNY_RIPPLE_ACC;
 	
 	public RippleBalanceCacheForNonXRP(){
 		init();

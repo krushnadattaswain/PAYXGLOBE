@@ -1,29 +1,32 @@
 package com.payxglobe.dto;
 
+import com.payxglobe.enums.CurrencyEnum;
+
 public class PaymentDto {
 
-	private String payeeAcc;
-	private String toCurr;
-	private String fromCurr;
+	//private String payeeAcc;
+	private CurrencyEnum toCurr;
+	private CurrencyEnum fromCurr;
 	private Double amt;
 	
 	
-	public String getPayeeAcc() {
+	/*public String getPayeeAcc() {
 		return payeeAcc;
 	}
 	public void setPayeeAcc(String payeeAcc) {
 		this.payeeAcc = payeeAcc;
-	}
-	public String getToCurr() {
+	}*/
+	public CurrencyEnum getToCurr() {
 		return toCurr;
 	}
-	public void setToCurr(String toCurr) {
+	public void setToCurr(CurrencyEnum toCurr) {
 		this.toCurr = toCurr;
 	}
-	public String getFromCurr() {
+	public CurrencyEnum getFromCurr() {
+		fromCurr = CurrencyEnum.CNY == toCurr ? CurrencyEnum.USD : CurrencyEnum.CNY;
 		return fromCurr;
 	}
-	public void setFromCurr(String fromCurr) {
+	public void setFromCurr(CurrencyEnum fromCurr) {
 		this.fromCurr = fromCurr;
 	}
 	public Double getAmt() {

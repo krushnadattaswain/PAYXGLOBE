@@ -5,6 +5,8 @@ public class Constant {
 	public static final String USER = "USER";
 	public static final String RIPPLE_CHARTS_URI = "https://api.ripplecharts.com/api/exchange_rates";
 	public static final String RIPPLE_TEST_NET_URI = "https://api.altnet.rippletest.net:5990/";
+	public static final String RIPPLE_TEST_NET_URI_FOR_UUID = "https://api.altnet.rippletest.net:5990/v1/uuid";
+	
 	public static final String GATEWAY_BITSTAMP = "BITSTAMP";
 	public static final String GATEWAY_BITSTAMP_ADDRESS = "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B";
 	public static final String GATEWAY_RIPPLEFOX = "RIPPLEFOX";
