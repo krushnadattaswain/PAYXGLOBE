@@ -278,6 +278,25 @@
 		transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
 		text-align: center;
 	}
+	
+	.container-login {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 80px 0;
+  height: 400px;
+  text-align: center;
+}
+
+.form-login {
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.button-login{
+	height: 35px;
+    width: 100px;
+}
 
 	.button:hover
 	{
