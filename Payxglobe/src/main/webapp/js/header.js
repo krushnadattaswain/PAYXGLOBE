@@ -1,0 +1,14 @@
+document.write('<head>');
+	document.write('<title>PAY X GLOBE</title>');
+	document.write('<meta http-equiv="content-type" content="text/html; charset=utf-8" />');
+	document.write('<meta name="description" content="" />');
+	document.write('<meta name="keywords" content="" />');
+	document.write('<script src="js/jquery-1.11.3.js"></script>');
+	document.write('<script src="js/skel.min.js"></script>');
+	document.write('<script src="js/init.js"></script>');
+	document.write('<noscript>');
+	document.write('<link rel="stylesheet" href="css/skel-noscript.css" />');
+	document.write('<link rel="stylesheet" href="css/style.css" />');
+	document.write('<link rel="stylesheet" href="css/style-desktop.css" />');
+	document.write('</noscript>');
+document.write('</head>');

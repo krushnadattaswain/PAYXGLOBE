@@ -1,0 +1,16 @@
+document.write('<div id="footer">');
+	document.write('<div class="container">');
+		document.write('<section>');
+			document.write('<header>');
+				document.write('<h2>Get in touch</h2>');
+				//document.write('<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>');
+			document.write('</header>');
+			document.write('<ul class="contact">');
+			    document.write('<li><a href="index.html" class="fa fa-twitter"><span>Twitter</span></a></li>');
+			    document.write('<li><a href="index.html" class="fa fa-facebook"><span>Facebook</span></a></li>');
+			    document.write('<li><a href="index.html" class="fa fa-dribbble"><span>Pinterest</span></a></li>');
+			    document.write('<li><a href="index.html" class="fa fa-tumblr"><span>Google+</span></a></li>');
+			document.write('</ul>');
+		document.write('</section>');
+	document.write('</div>');
+document.write('</div>');

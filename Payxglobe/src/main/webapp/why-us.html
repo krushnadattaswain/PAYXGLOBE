@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+	
+	<body class="homepage">
+    <script src="js/header.js"></script>
+    
+    <script src="js/why-us.js"></script>
+    
+    <body>
+
+	<!-- Header -->
+	<script src="js/menu.js"></script>	
+
+	    <!-- Body -->
+		<div id="main">
+			<div id="content" class="container">
+				<section>
+					<header>
+						<h2>Why Us</h2>
+					</header>
+					<div style="border: 1px solid red; height: 300px;">
+						<div style="border: 1px solid red; width:250px; float: left; margin-left:280px;">
+							<span class="text-label-class-blue">Source Currency</span>	
+							<br />
+							<select class="epam-select" id="sourceSelect">
+						        <option value="">Please Select</option>
+						        <option value="USD">USD</option>
+						        <option value="CNY">CNY</option>
+						    </select>
+						</div>
+						<div style="border: 1px solid red; width:150px; float: left;">    
+							<img src="images/arrow-right-128.png" style="height: 74px">
+						</div>
+						<div style="border: 1px solid red; width:250px; float: left;">	
+							<span class="text-label-class-blue">Destination Currency</span>
+							<br />
+							<select class="epam-select" id="destinationSelect">
+						        <option value="">Please Select</option>
+						        <option value="CNY">CNY</option>
+						        <option value="USD">USD</option>
+						    </select>	
+						</div> 
+						<div class="button" onclick="currencyChange()">Go</div> 
+						
+						<div style="border: 1px solid green; width: 400px; height: 50px; 
+						margin-top: 50px; margin-left: 400px; text-align: left;"; id="currencyResult">
+							<span class="text-label-class-blue">Result</span>
+						</div>
+					</div> 
+				</section>
+			</div>
+		</div>
+		
+        <!-- Footer -->
+		<script src="js/footer.js"></script>
+		
+	</body>
+</html>
