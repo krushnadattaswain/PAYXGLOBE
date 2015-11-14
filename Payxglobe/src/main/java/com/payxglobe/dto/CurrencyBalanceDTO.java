@@ -2,10 +2,18 @@ package com.payxglobe.dto;
 
 public class CurrencyBalanceDTO {
 
+	private String gname;
 	private String gaddress;
 	private String curr;
 	private String bal;
 	
+	
+	public String getGname() {
+		return gname;
+	}
+	public void setGname(String gname) {
+		this.gname = gname;
+	}
 	public String getGaddress() {
 		return gaddress;
 	}

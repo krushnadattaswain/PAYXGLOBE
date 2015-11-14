@@ -31,11 +31,13 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
       "raddress": "rhQPVGSTmkcNxvb1QeiCg6rHaFKewso9tN",
       "currBalances": [
         {
+          "gname": "BITSTAMP",
           "gaddress": "1234",
           "curr": "USD",
           "bal": "10000"
         },
         {
+          "gname": "RIPPLEFOX",
           "gaddress": "1235",
           "curr": "CNY",
           "bal": "10000"
@@ -46,11 +48,13 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
       "raddress": "snVEhnrw8UwCxp466Xv3jTfVqAFG8",
       "currBalances": [
         {
+          "gname": "BITSTAMP",
           "gaddress": "1234",
           "curr": "USD",
           "bal": "10000"
         },
         {
+          "gname": "RIPPLEFOX",
           "gaddress": "1235",
           "curr": "CNY",
           "bal": "10000"

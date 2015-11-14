@@ -39,11 +39,13 @@ public class RippleServiceImpl implements RippleService{
 		List<CurrencyBalanceDTO> bals = new ArrayList<CurrencyBalanceDTO>();
 		
 		CurrencyBalanceDTO bal1 = new CurrencyBalanceDTO();
+		bal1.setGname("BITSTAMP");
 		bal1.setGaddress("1234");
 		bal1.setCurr("USD");
 		bal1.setBal("10000");
 		
 		CurrencyBalanceDTO bal2 = new CurrencyBalanceDTO();
+		bal2.setGname("RIPPLEFOX");
 		bal2.setGaddress("1235");
 		bal2.setCurr("CNY");
 		bal2.setBal("10000");
