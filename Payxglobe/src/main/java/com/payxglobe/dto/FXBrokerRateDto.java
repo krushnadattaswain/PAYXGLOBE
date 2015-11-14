@@ -3,8 +3,8 @@ package com.payxglobe.dto;
 public class FXBrokerRateDto {
 
 	private String name;
-	private String rate;
-	private String difference;
+	private Double rate;
+	private Double difference;
 	
 	public String getName() {
 		return name;
@@ -12,16 +12,16 @@ public class FXBrokerRateDto {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getRate() {
+	public Double getRate() {
 		return rate;
 	}
-	public void setRate(String rate) {
+	public void setRate(Double rate) {
 		this.rate = rate;
 	}
-	public String getDifference() {
+	public Double getDifference() {
 		return difference;
 	}
-	public void setDifference(String difference) {
+	public void setDifference(Double difference) {
 		this.difference = difference;
 	}
 	

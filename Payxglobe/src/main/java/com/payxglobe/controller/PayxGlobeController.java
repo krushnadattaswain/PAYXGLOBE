@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.payxglobe.dto.FXRateDto;
 import com.payxglobe.dto.FXRateResultDto;
+import com.payxglobe.dto.PayeeDto;
 import com.payxglobe.dto.RippleBalanceDto;
 import com.payxglobe.service.FXRateService;
+import com.payxglobe.service.PayeeService;
 import com.payxglobe.service.RippleService;
 
 @Configuration
@@ -26,10 +28,18 @@ public class PayxGlobeController {
 	
 	@Autowired
 	private RippleService rippleService;
+	
+	@Autowired
+	private PayeeService payeeService;
 
 	@RequestMapping(value = "/getFXRate", method = RequestMethod.POST)
 	private FXRateResultDto getFXRate(@RequestBody FXRateDto fxRateDto, @RequestParam String ts) {
 		return fxRateService.getFxRate(fxRateDto);
+	}
+	
+	@RequestMapping(value = "/getPayeeList", method = RequestMethod.GET)
+	private List<PayeeDto> getPayeeList( @RequestParam String ts) {
+		return payeeService.getPayeeList();
 	}
 	
 	@RequestMapping(value = "/test", method = RequestMethod.GET)

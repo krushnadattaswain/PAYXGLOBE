@@ -24,6 +24,7 @@ http://192.168.2.112:8080/payxglobe/getFXRate?ts=13214234
 ====== getBalance --    GET    ===========
 http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
 
+------------ result ------
 {
   "currBalances": [
     {
@@ -58,3 +59,29 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
     }
   ]
 }
+
+================= get payee list  GET ===========
+
+http://192.168.2.112:8080/payxglobe/getPayeeList?ts=13214234
+
+--------- result ----------
+[
+  {
+    "name": "Tanmoy Ghosh",
+    "acc": "0023618364",
+    "curr": "CNY",
+    "bank": "CMB",
+    "bic": "IBSANH123",
+    "mob": "13164795088",
+    "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
+  },
+  {
+    "name": "Rahul Mujnani",
+    "acc": "0023623928",
+    "curr": "CNY",
+    "bank": "CMB",
+    "bic": "IBSANH123",
+    "mob": "1316479459",
+    "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
+  }
+]

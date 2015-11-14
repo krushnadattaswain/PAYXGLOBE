@@ -4,6 +4,7 @@ public class FXRateDto {
 
 	private String from;
 	private String to;
+	private String amt;
 	
 	public String getFrom() {
 		return from;
@@ -16,6 +17,12 @@ public class FXRateDto {
 	}
 	public void setTo(String to) {
 		this.to = to;
+	}
+	public String getAmt() {
+		return amt;
+	}
+	public void setAmt(String amt) {
+		this.amt = amt;
 	}
 
 
