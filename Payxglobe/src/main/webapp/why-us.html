@@ -24,8 +24,8 @@
 							<br />
 							<select class="epam-select" id="sourceSelect">
 						        <option value="">Please Select</option>
-						        <option value="USD">USD</option>
-						        <option value="CNY">CNY</option>
+						        <option value="USD">&#36 USD</option>
+						        <option value="CNY">&#165 CNY</option>
 						    </select>
 						</div>
 						<div style="border: 0px solid red; width:150px; float: left;">    
@@ -36,25 +36,24 @@
 							<br />
 							<select class="epam-select" id="destinationSelect">
 						        <option value="">Please Select</option>
-						        <option value="CNY">CNY</option>
-						        <option value="USD">USD</option>
+						        <option value="CNY">&#165 CNY</option>
+						        <option value="USD">&#36 USD</option>
 						    </select>	
 						</div> 
 						
 						<div class="text-label-class-blue" 
-						style="font-size:14px; margin-right: 15px; margin-top: 25px; float: left;" onclick="yourAmount()">
-							<span id="userAmmountSpan">Your Amount</span>
+						style="font-size:14px; margin-right: 15px; margin-top: 25px; float: left;">
 							<input type="text" class="epam-textbox" 
-						    id="userAmmount" style="display:none;" placeholder="Enter Your Amount" />
+						    id="userAmmount" placeholder="Enter Your Amount" />
 						</div>	
 						
 						<div class="button" onclick="currencyChange()" style="cursor: pointer; margin-top: 10px;">Go</div> 
 						
 						<div style="border: 0px solid green; width: 900px; min-height: 50px; display: none; 
-						margin-top: 30px; margin-left: 120px; text-align: center;"; id="currencyResult">
+						margin-top: 30px; margin-left: 150px; text-align: center;"; id="currencyResult">
 							<span class="text-label-class-green">Our Rate : <span id="ourRate"></span></span>
 							<br/>
-							<ul class="data-ul" id="brokerInfo" style="margin-left: 160px;">
+							<ul class="data-ul" id="brokerInfo" style="margin-left: 140px;">
 							</ul>    
 						</div>
 					</div> 
