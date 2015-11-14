@@ -31,13 +31,11 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
       "raddress": "rhQPVGSTmkcNxvb1QeiCg6rHaFKewso9tN",
       "currBalances": [
         {
-          "gname": "BITSTAMP",
           "gaddress": "1234",
           "curr": "USD",
           "bal": "10000"
         },
         {
-          "gname": "RIPPLEFOX",
           "gaddress": "1235",
           "curr": "CNY",
           "bal": "10000"
@@ -48,13 +46,11 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
       "raddress": "snVEhnrw8UwCxp466Xv3jTfVqAFG8",
       "currBalances": [
         {
-          "gname": "BITSTAMP",
           "gaddress": "1234",
           "curr": "USD",
           "bal": "10000"
         },
         {
-          "gname": "RIPPLEFOX",
           "gaddress": "1235",
           "curr": "CNY",
           "bal": "10000"
@@ -69,35 +65,23 @@ http://192.168.2.112:8080/payxglobe/getAccBalance?ts=13214234
 http://192.168.2.112:8080/payxglobe/getPayeeList?ts=13214234
 
 --------- result ----------
-{
-  "spotRates": [
-    {
-      "pair": "USD:CNY",
-      "rate": 6.53
-    },
-    {
-      "pair": "CNY:USD",
-      "rate": 1.53
-    }
-  ],
-  "payeeList": [
-    {
-      "name": "Tanmoy Ghosh",
-      "acc": "0023618364",
-      "curr": "CNY",
-      "bank": "CMB",
-      "bic": "CMBCCNBS050",
-      "mob": "13164795088",
-      "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
-    },
-    {
-      "name": "Rahul Mujnani",
-      "acc": "0023623928",
-      "curr": "CNY",
-      "bank": "CMB",
-      "bic": "CMBCCNBS050",
-      "mob": "1316479459",
-      "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
-    }
-  ]
-}
+[
+  {
+    "name": "Tanmoy Ghosh",
+    "acc": "0023618364",
+    "curr": "CNY",
+    "bank": "CMB",
+    "bic": "IBSANH123",
+    "mob": "13164795088",
+    "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
+  },
+  {
+    "name": "Rahul Mujnani",
+    "acc": "0023623928",
+    "curr": "CNY",
+    "bank": "CMB",
+    "bic": "IBSANH123",
+    "mob": "1316479459",
+    "address": "A-1809, Tata Apt.: Nanshan, Shenzhen : China"
+  }
+]

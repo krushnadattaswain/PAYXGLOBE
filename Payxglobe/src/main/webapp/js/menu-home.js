@@ -6,6 +6,7 @@ document.write('<div id="header">');
                 document.write('<li><a href="why-us.html">Why Choose Us</a></li>');
                 document.write('<li><a href="transaction.html">Transaction</a></li>');
                 document.write('<li><a href="login.html">Login</a></li>');
+                document.write('<li><a href="admin.html">Admin</a></li>');
                 document.write('<li><a href="contact-us.html">Contact Us</a></li>');
             document.write('</ul>');
         document.write('</nav>');
