@@ -45,13 +45,13 @@ public class PayxGlobeController {
 		UserViewDto userViewDto = new UserViewDto();
 		userViewDto.setPayeeList(payeeService.getPayeeList());
 		
-		SpotRatesDto spotRatesDto = new SpotRatesDto();
-		userViewDto.setSpotRates(spotRatesDto);
-		
 		List<SpotRateDto> spotRates = new ArrayList<SpotRateDto>();
-		spotRatesDto.setSpotRates(spotRates);
 		spotRates.add(new SpotRateDto("USD:CNY", 6.53));
 		spotRates.add(new SpotRateDto("CNY:USD", 1.53));
+		
+		userViewDto.setSpotRates(spotRates);
+		
+		
 		return userViewDto;
 	}
 	
