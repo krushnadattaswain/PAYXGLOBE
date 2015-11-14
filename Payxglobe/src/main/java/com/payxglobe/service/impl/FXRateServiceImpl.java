@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
 
 import com.payxglobe.dto.FXBrokerRateDto;
 import com.payxglobe.dto.FXRateDto;
@@ -16,7 +15,8 @@ public class FXRateServiceImpl implements FXRateService {
 
 	@Override
 	public FXRateResultDto getFxRate(FXRateDto fxRateDto) {
-		Double amt = StringUtils.isEmpty(fxRateDto.getAmt()) ? 1.0 : Double.parseDouble(fxRateDto.getAmt());
+		String amount =  fxRateDto.getAmt();
+		Double amt = (amount == null || amount.isEmpty()) ? 1.0 : Double.parseDouble(fxRateDto.getAmt());
 		FXRateResultDto result = new FXRateResultDto();
 		result.setForm("USD");
 		result.setTo("CNY");

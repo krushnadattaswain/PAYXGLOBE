@@ -15,6 +15,9 @@ import com.payxglobe.dto.FXRateDto;
 import com.payxglobe.dto.FXRateResultDto;
 import com.payxglobe.dto.PayeeDto;
 import com.payxglobe.dto.RippleBalanceDto;
+import com.payxglobe.dto.SpotRateDto;
+import com.payxglobe.dto.SpotRatesDto;
+import com.payxglobe.dto.UserViewDto;
 import com.payxglobe.service.FXRateService;
 import com.payxglobe.service.PayeeService;
 import com.payxglobe.service.RippleService;
@@ -38,8 +41,18 @@ public class PayxGlobeController {
 	}
 	
 	@RequestMapping(value = "/getPayeeList", method = RequestMethod.GET)
-	private List<PayeeDto> getPayeeList( @RequestParam String ts) {
-		return payeeService.getPayeeList();
+	private UserViewDto getPayeeList( @RequestParam String ts) {
+		UserViewDto userViewDto = new UserViewDto();
+		userViewDto.setPayeeList(payeeService.getPayeeList());
+		
+		SpotRatesDto spotRatesDto = new SpotRatesDto();
+		userViewDto.setSpotRates(spotRatesDto);
+		
+		List<SpotRateDto> spotRates = new ArrayList<SpotRateDto>();
+		spotRatesDto.setSpotRates(spotRates);
+		spotRates.add(new SpotRateDto("USD:CNY", 6.53));
+		spotRates.add(new SpotRateDto("CNY:USD", 1.53));
+		return userViewDto;
 	}
 	
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
