@@ -2,5 +2,5 @@ package com.payxglobe.constants;
 
 public class Constant {
 
-	public static final String USER = "Tanmoy";
+	public static final String USER = "USER";
 }
