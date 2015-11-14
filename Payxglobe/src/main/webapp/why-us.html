@@ -18,8 +18,8 @@
 					<header>
 						<h2>Why Us</h2>
 					</header>
-					<div style="border: 1px solid red; height: 300px;">
-						<div style="border: 1px solid red; width:250px; float: left; margin-left:280px;">
+					<div style="border: 0px solid red; height: 300px;">
+						<div style="border: 0px solid red; width:250px; float: left; margin-left:280px;">
 							<span class="text-label-class-blue">Source Currency</span>	
 							<br />
 							<select class="epam-select" id="sourceSelect">
@@ -28,10 +28,10 @@
 						        <option value="CNY">CNY</option>
 						    </select>
 						</div>
-						<div style="border: 1px solid red; width:150px; float: left;">    
-							<img src="images/arrow-right-128.png" style="height: 74px">
+						<div style="border: 0px solid red; width:150px; float: left;">    
+							<img src="images/arrow-right-128.png" style="height: 64px">
 						</div>
-						<div style="border: 1px solid red; width:250px; float: left;">	
+						<div style="border: 0px solid red; width:250px; float: left;">	
 							<span class="text-label-class-blue">Destination Currency</span>
 							<br />
 							<select class="epam-select" id="destinationSelect">
@@ -40,11 +40,36 @@
 						        <option value="USD">USD</option>
 						    </select>	
 						</div> 
-						<div class="button" onclick="currencyChange()">Go</div> 
+						<div class="button" onclick="currencyChange()" style="cursor: pointer;">Go</div> 
 						
-						<div style="border: 1px solid green; width: 400px; height: 50px; 
-						margin-top: 50px; margin-left: 400px; text-align: left;"; id="currencyResult">
-							<span class="text-label-class-blue">Result</span>
+						<div style="border: 0px solid green; width: 900px; min-height: 50px; display: none; 
+						margin-top: 50px; margin-left: 150px; text-align: center;"; id="currencyResult">
+							<span class="text-label-class-green">Our Rate : <span id="ourRate"></span></span>
+							<br/>
+							<ul class="data-ul" style="margin-left: 160px;">
+								<li>
+									<table style="border:0px solid red; 
+									margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; 
+									width: 600px;">
+										<tr>
+											<td style="width:200px;">Broker Name : <span id="brokerName">Western Union</span></td>
+											<td style="width:200px;">Broker Rate : <span id="brokerRate">6.2</span></td>
+											<td style="width:200px;">Savings With Us <span id="savingsWithUs">0.2</span></td>
+									    </tr>
+									</table>
+							    </li>
+							    <li>
+									<table style="border:0px solid red; 
+									margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; 
+									width: 600px;">
+										<tr>
+											<td style="width:200px;">Broker Name : <span id="brokerName">Some Other</span></td>
+											<td style="width:200px;">Broker Rate : <span id="brokerRate">6.1</span></td>
+											<td style="width:200px;">Savings With Us <span id="savingsWithUs">0.3</span></td>
+									    </tr>
+									</table>
+							    </li>
+							</ul>    
 						</div>
 					</div> 
 				</section>

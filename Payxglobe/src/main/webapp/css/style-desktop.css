@@ -114,17 +114,41 @@
 	}
 	
 /* -- epam style --*/
-.text-label-class-blue {
+.text-label-class-gray-small {
+	font-size: 18px;
+	color: #777;
+}
+
+.text-label-class-gray-big {
 	font-size: 20px;
-	color: #00B9FF;
+	color: #777;
 }
 
 .text-label-class-green {
 	font-size: 20px;
-	color: green;
+	color: #088A29;
+}
+
+.text-label-class-blue {
+	font-size: 20px;
+	color: #2E9AFE;
 }
 
 .epam-select {
 	border: 3px solid #A4A4A4;
 	width: 150px;
+}
+
+.data-ul {
+	width: 70%;
+	text-align: center;
+}
+
+.data-ul li:first-child {
+	border-top: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+}
+
+.data-ul li {
+	border-bottom: 1px solid #E6E6E6;
 }

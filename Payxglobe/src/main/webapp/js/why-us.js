@@ -11,9 +11,10 @@ function fetchData(fromCurr, toCurr) {
   contentType: "application/json",
   success: function(data) { 
   var ourRate = data.ourRate;
-
-  $("#currencyResult").html("");
-  $("#currencyResult").html(ourRate);
+  
+  $("#currencyResult").show();
+  $("#ourRate").html("");
+  $("#ourRate").html(ourRate);
   
        }
   });   
