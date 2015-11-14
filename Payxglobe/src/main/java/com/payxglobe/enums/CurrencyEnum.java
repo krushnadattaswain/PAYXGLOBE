@@ -2,5 +2,5 @@ package com.payxglobe.enums;
 
 public enum CurrencyEnum {
 
-	USD, CNY, XRP;
+	USD, CNY, XRP, BTC;
 }

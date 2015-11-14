@@ -5,7 +5,7 @@ import java.util.List;
 public class RippleCurrencyBalanceDto {
 
 	private String raddress;
-	private List<CurrencyBalanceDTO> currBalances;
+	private List<CurrencyBalanceDTO> balances;
 	
 	public String getRaddress() {
 		return raddress;
@@ -13,11 +13,11 @@ public class RippleCurrencyBalanceDto {
 	public void setRaddress(String raddress) {
 		this.raddress = raddress;
 	}
-	public List<CurrencyBalanceDTO> getCurrBalances() {
-		return currBalances;
+	public List<CurrencyBalanceDTO> getBalances() {
+		return balances;
 	}
-	public void setCurrBalances(List<CurrencyBalanceDTO> currBalances) {
-		this.currBalances = currBalances;
+	public void setBalances(List<CurrencyBalanceDTO> balances) {
+		this.balances = balances;
 	}
 	
 	
