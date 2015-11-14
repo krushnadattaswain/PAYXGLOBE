@@ -27,6 +27,14 @@
 						        <option value="USD">USD</option>
 						        <option value="CNY">CNY</option>
 						    </select>
+						    <br />
+						    <span id="userAmmountSpan" 
+						    class="text-label-class-blue" 
+						    style="font-size:14px;" onclick="yourAmount()">
+						    	Your Amount
+						    </span>
+						    <input type="text" class="epam-textbox" 
+						    id="userAmmount" style="display:none; margin-left: -3px; margin-top: 5px;" placeholder="Enter Your Amount">	
 						</div>
 						<div style="border: 0px solid red; width:150px; float: left;">    
 							<img src="images/arrow-right-128.png" style="height: 64px">
@@ -46,8 +54,8 @@
 						margin-top: 50px; margin-left: 150px; text-align: center;"; id="currencyResult">
 							<span class="text-label-class-green">Our Rate : <span id="ourRate"></span></span>
 							<br/>
-							<ul class="data-ul" style="margin-left: 160px;">
-								<li>
+							<ul class="data-ul" id="brokerInfo" style="margin-left: 160px;">
+								<!-- <li>
 									<table style="border:0px solid red; 
 									margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; 
 									width: 600px;">
@@ -68,7 +76,7 @@
 											<td style="width:200px;">Savings With Us <span id="savingsWithUs">0.3</span></td>
 									    </tr>
 									</table>
-							    </li>
+							    </li> -->
 							</ul>    
 						</div>
 					</div> 
