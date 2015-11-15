@@ -69,12 +69,12 @@ function currencyChange() {
 }
 
 function getCurrencySign() {
-	var currencySign = $("#sourceSelect").val();
+	var currencySign = $("#destinationSelect").val();
 	var RBMSign = '&#165 ' + currencySign;
 	var USDSign = '&#36 ' + currencySign;
-	if(currencySign == "CNY") {
-		return RBMSign;
+	if(currencySign == "USD") {
+		return USDSign;
 	} else {
-	    return USDSign;	
+	    return RBMSign;	
 	}
 }
