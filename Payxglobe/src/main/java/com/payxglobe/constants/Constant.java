@@ -20,4 +20,8 @@ public class Constant {
 	public static final String PAYXGLOBE_CNY_RIPPLE_ACC = "rws4tnZwQLwtD3s5g8Mf3YfM1iPLfNDyHh";
 	public static final String PAYXGLOBE_CNY_RIPPLE_SECRET = "ss3H49AUtT7gE2eNA7JDeDGk8iPfj";
 	
+	public static final String USD_CNY_PAIR = "USD:CNY";
+	public static final String CNY_USD_PAIR = "CNY:USD";
+	
+	
 }

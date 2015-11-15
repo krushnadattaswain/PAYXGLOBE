@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.payxglobe.cache.FXBrokerRate;
+import com.payxglobe.cache.FxBrokerRateCache;
 import com.payxglobe.dto.FXBrokerRateDto;
 import com.payxglobe.dto.FXRateDto;
 import com.payxglobe.dto.FXRateResultDto;
@@ -29,29 +31,29 @@ public class FXRateServiceImpl implements FXRateService {
 		result.setTo(fxRateDto.getTo());
 		result.setOurRate(NumberUtil.formatNumberTwoDecimalPlaces(rippleFxRate));
 		
-		FXBrokerRateDto brkr1 = new FXBrokerRateDto();
-		double brkr1rate = 6.21;
-		brkr1.setRate(NumberUtil.formatNumberTwoDecimalPlaces(brkr1rate));
-		brkr1.setName("WU");
-		brkr1.setDifference(NumberUtil.formatNumberTwoDecimalPlaces(amt * (rippleFxRate - brkr1rate)));
+		List<FXBrokerRateDto> brkrRates = new ArrayList<FXBrokerRateDto>();
+		result.setFxBrokerrates(brkrRates);
+		String currPair = fxRateDto.getFrom() + ":" + fxRateDto.getTo();
+		FXBrokerRateDto currFxBrokerRateDto = null;
 		
-		FXBrokerRateDto brkr2 = new FXBrokerRateDto();
-		double brkr2rate = 6.11;
-		brkr2.setRate(NumberUtil.formatNumberTwoDecimalPlaces(brkr2rate));
-		brkr2.setName("ABC");
-		brkr2.setDifference(NumberUtil.formatNumberTwoDecimalPlaces(amt * (rippleFxRate - brkr2rate)));
+		List<FXBrokerRate> fxBrokerRateList = FxBrokerRateCache.getBrokerrates(currPair);
 		
-		List<FXBrokerRateDto> brkrs = new ArrayList<FXBrokerRateDto>();
-		brkrs.add(brkr1);
-		brkrs.add(brkr2);
+		if(fxBrokerRateList == null || fxBrokerRateList.isEmpty()) return result;
 		
-		result.setFxBrokerrates(brkrs);
+		for(FXBrokerRate fxBrokerRate : fxBrokerRateList){
+			currFxBrokerRateDto = new FXBrokerRateDto();
+			currFxBrokerRateDto.setRate(NumberUtil.formatNumberTwoDecimalPlaces(fxBrokerRate.getRate()));
+			currFxBrokerRateDto.setName(fxBrokerRate.getName());
+			currFxBrokerRateDto.setDifference(NumberUtil.formatNumberTwoDecimalPlaces(amt * (rippleFxRate - fxBrokerRate.getRate())));
+			brkrRates.add(currFxBrokerRateDto);
+		}
+		
+		
 		return result;
 	}
 
 	@Override
-	public Double getFxRate(FXRateDto fxRateDto) {
-		
+	public Double getFxRate(FXRateDto fxRateDto) {		
 		return rippleService.getFXRateFromRipple(fxRateDto.getFrom(), fxRateDto.getTo());
 	}
 
