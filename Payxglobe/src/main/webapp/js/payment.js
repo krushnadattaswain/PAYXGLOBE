@@ -35,7 +35,6 @@ function initiatepayment(curr, ammt) {
 		  data: JSON.stringify(payment),
 		  contentType: "application/json",
 		  success: function(data) {
-			  alert(1);
 			  location.href = "transaction.html"
 	      }
 	  });   
