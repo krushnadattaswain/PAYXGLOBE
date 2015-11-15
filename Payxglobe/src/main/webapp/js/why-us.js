@@ -1,5 +1,6 @@
 function fetchData(fromCurr, toCurr, userAmmount) {
-  var currencyPair = {
+	$("#loadingDiv").show();
+	var currencyPair = {
           from: ""+fromCurr+"",
           to: ""+toCurr+"",
           amt: ""+userAmmount+"",
@@ -29,17 +30,18 @@ function createDom(data) {
     for(var i=0; i < data.fxBrokerrates.length; i++) {
     	htmlContent = htmlContent + '';
     	htmlContent = htmlContent + '<li>';
-    	htmlContent = htmlContent + '<table style="border:0px solid red; margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; width: 600px;">';
+    	htmlContent = htmlContent + '<table style="border:0px solid red; margin-left: 10px; margin-top: 10px;  margin-bottom: 10px; width: 800px;">';
     	htmlContent = htmlContent + '<tr>';
     	htmlContent = htmlContent + '<td style="width:200px;">Broker Name : <span id="brokerName">'+data.fxBrokerrates[i].name+'</span></td>';
     	htmlContent = htmlContent + '<td style="width:200px;">Broker Rate : <span id="brokerRate">'+data.fxBrokerrates[i].rate+'</span></td>';
-    	htmlContent = htmlContent + '<td style="width:200px; color:#2E9AFE;">Savings With Us : <span id="savingsWithUs">'+data.fxBrokerrates[i].difference+'</span></td>';
+    	htmlContent = htmlContent + '<td style="width:200px; color:#2E9AFE;">Savings With Us : <span id="savingsWithUs">'+data.fxBrokerrates[i].difference+' '+getCurrencySign()+'</span></td>';
     	htmlContent = htmlContent + '</tr>';
     	htmlContent = htmlContent + '</table>';
     	htmlContent = htmlContent + '</li>';
     }
     
     //alert("here 1 " + htmlContent);
+    $("#loadingDiv").hide();
     $("#brokerInfo").html("");
     $("#brokerInfo").html(htmlContent); 
 }
@@ -66,7 +68,13 @@ function currencyChange() {
 	}
 }
 
-//function yourAmount() {
-	//$("#userAmmountSpan").hide();
-	//$("#userAmmount").show();
-//}
+function getCurrencySign() {
+	var currencySign = $("#sourceSelect").val();
+	var RBMSign = '&#165 ' + currencySign;
+	var USDSign = '&#36 ' + currencySign;
+	if(currencySign == "CNY") {
+		return RBMSign;
+	} else {
+	    return USDSign;	
+	}
+}

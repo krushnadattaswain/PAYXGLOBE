@@ -18,7 +18,7 @@
 					<header>
 						<h2>Why Us</h2>
 					</header>
-					<div style="border: 0px solid red; min-height: 200px;">
+					<div style="border: 0px solid red; min-height: 300px;">
 						<div style="border: 0px solid red; width:250px; float: left; margin-left:280px;">
 							<span class="text-label-class-blue">Source Currency</span>	
 							<br />
@@ -48,8 +48,12 @@
 						</div>	
 						
 						<div class="button" onclick="currencyChange()" style="cursor: pointer; margin-top: 10px;">Go</div> 
+					    
+					    <div id="loadingDiv" style="min-height: 50px; margin-right: 400px; display: none;">
+							<img src="images/loading.gif" />
+						</div>
 						
-						<div style="border: 0px solid green; width: 900px; min-height: 50px; display: none; 
+						<div style="border: 0px solid green; width: 1000px; min-height: 50px; display: none; 
 						margin-top: 30px; margin-left: 150px; text-align: center;"; id="currencyResult">
 							<span class="text-label-class-green">Our Rate : <span id="ourRate"></span></span>
 							<br/>
