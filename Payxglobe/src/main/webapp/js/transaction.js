@@ -46,7 +46,7 @@ function createDom(data) {
     	htmlContent = htmlContent + '</td>';
     	htmlContent = htmlContent + '<td style="width:250px;"><div class="text-label-class-blue" style="font-size: 14px; border:0px solid red;" id="transferring-span-'+payeeNumber+'"></div></td>';
     	htmlContent = htmlContent + '<td style="width:100px;">';
-    	htmlContent = htmlContent + '<div class="button" onclick="someFn()" style="cursor: pointer; height: 50px; width: 80px; padding: 10px 0px 0px 0px;">Pay</div>';
+    	htmlContent = htmlContent + '<div class="button" onclick="paymenttransfer('+payeeNumber+')" style="cursor: pointer; height: 50px; width: 80px; padding: 10px 0px 0px 0px;">Pay</div>';
     	htmlContent = htmlContent + '</td>';
     	htmlContent = htmlContent + '</tr>';
     	htmlContent = htmlContent + '</table>';
@@ -59,6 +59,17 @@ function createDom(data) {
     $("#loadingDiv").hide();
 }  
 
+
+function paymenttransfer(payeeNumber){
+	var amt="";
+	var crncy="";
+	
+	amt = $("#payee-amount-"+payeeNumber+"").val();
+	toCurr = $("#payee-amount-curr-select-"+payeeNumber+"").val();
+	
+	location.href = "payment.html?toCurr="+toCurr+"&amt="+amt;
+	
+}
 function showPayeeDetails(payeeNumber) {
 	var payeeDetailSectionId = "payee-details-"+payeeNumber;
 	

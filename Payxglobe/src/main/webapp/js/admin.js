@@ -72,4 +72,6 @@ function createDom(data) {
     
     $("#admin-list-ul-1").html("");
     $("#admin-list-ul-1").html(htmlContent1);
+    $("#loadingDiv").hide();
+    $("#dataarea").show();
 }    

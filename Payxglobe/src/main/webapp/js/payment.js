@@ -1,17 +1,32 @@
-function populatecrncy() {
+$( document ).ready(function() {
+	getURLParam();
+});
 
-	var trnsframt = "";
-	var trnsfrCurr = document.getElementById("trnsframt").getAttribute("placeholder");
-	//console.log(placeholder);
-	trnsframt = $("#trnsframt").val();
+var curr = "";
+var ammt = "";
 
-	initiatepayment(trnsfrCurr, trnsframt);
+function getURLParam() {
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(i == 0){
+            	   curr = pair[1];	   
+               } else {
+            	   ammt = pair[1];
+               }
+       }
+       $("#trnsframt").val(ammt);
 }
 
-function initiatepayment(trnsfrCurr, trnsframt) {
+function populatecrncy() {
+	initiatepayment(curr, ammt);
+}
+
+function initiatepayment(curr, ammt) {
 	 var payment = {
-			 toCurr: ""+trnsfrCurr+"",
-	          amt: ""+trnsframt+""
+			 toCurr: ""+curr+"",
+	          amt: ""+ammt+""
 	         };
 	
 	$.ajax({
@@ -20,6 +35,7 @@ function initiatepayment(trnsfrCurr, trnsframt) {
 		  data: JSON.stringify(payment),
 		  contentType: "application/json",
 		  success: function(data) {
+			  alert(1);
 			  location.href = "transaction.html"
 	      }
 	  });   
